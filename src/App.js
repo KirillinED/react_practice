@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Grid} from "@mui/material";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Header from './components/header';
+import CustomerForm from "./components/CustomerForm";
+
+
+const App = () => (
+    <Grid container spacing={2}>
+        <Grid item xs={12}>
+            <Header/>
+        </Grid>
+        <Grid item xs={12}>
+            <CustomerForm
+                initVal={{
+                    id: null,
+                    city_id: 12,
+                    city_name: 'Казань',
+                    address_id: null,
+                    address_name: '',
+                    road_map:'',
+                    mime_type:'',
+                    del: false,
+                }}
+            />
+        </Grid>
+    </Grid>
+);
 
 export default App;
