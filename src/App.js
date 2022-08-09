@@ -1,17 +1,15 @@
 import React from 'react';
 import {Grid} from "@mui/material";
 
-import Header from './components/header';
 import CustomerForm from "./components/CustomerForm";
+import ObservableStore from "./stores/appStore";
 
 
 const App = () => (
     <Grid container spacing={2}>
         <Grid item xs={12}>
-            <Header/>
-        </Grid>
-        <Grid item xs={12}>
             <CustomerForm
+                store={ObservableStore}
                 initVal={{
                     id: null,
                     city_id: 12,
